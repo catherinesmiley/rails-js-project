@@ -1,0 +1,2 @@
+class BigWord < ApplicationRecord
+end
