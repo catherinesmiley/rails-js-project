@@ -5,8 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function renderFirstWord() {
+    // change to renderBigWords/make separate function?
     // add clear form function
     let bigWordDisplay = document.querySelector("#big-word-display")
     fetch(`${BASE_URL}/big_words`)
-    console.log(`${BASE_URL}/big_words`)
-}
+    .then(resp => resp.json())
+    .then(bigWords => {
+        let bigWordsHTML =
+            `
+            <h1>${bigWords[0].name}</h1>
+            `
+        bigWordDisplay.innerHTML = bigWordsHTML
+        })
+    }
