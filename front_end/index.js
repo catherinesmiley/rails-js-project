@@ -9,20 +9,21 @@ function renderFirstWord() {
     // change to renderBigWords/make separate function?
     // change to renderRandomWord?
     clearBody()
-    let bigWordDisplay = document.querySelector("#big-word-display")
-    fetch(`${BASE_URL}/big_words`)
+    let wordDisplay = document.querySelector("#word-display")
+    fetch(`${BASE_URL}/words`)
     .then(resp => resp.json())
-    .then(bigWords => {
-        let bigWordsHTML =
+    .then(words => {
+        let randomWord = words[Math.floor(Math.random() * words.length)]
+        let wordsHTML =
             `
-            <h1>${bigWords[0].name}</h1>
+            <h1>${randomWord.name}</h1>
             `
-        bigWordDisplay.innerHTML = bigWordsHTML
+        wordDisplay.innerHTML = wordsHTML
         })
     }
 
 function clearBody() {
-    document.querySelector("#big-word-display").innerHTML = ""
+    document.querySelector("#word-display").innerHTML = ""
 }
 
 document.querySelector("#new-game").addEventListener("click", renderFirstWord)
