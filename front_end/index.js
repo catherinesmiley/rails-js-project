@@ -1,7 +1,7 @@
 const BASE_URL = "http://localhost:3000"
 
 document.addEventListener("DOMContentLoaded", () => {
-
+    // createUserForm
 })
 
 function renderRandomWord() {
@@ -23,4 +23,17 @@ function clearBody() {
     document.querySelector("#word-display").innerHTML = ""
 }
 
+function createUserForm() {
+    const body = document.body
+
+    body.innerHTML += 
+    `
+        <div id="user-form">
+            <input type="text" id="username">
+            <button id="create-user">Create User</button>
+        </div>
+    `
+}
+
 document.querySelector("#new-game").addEventListener("click", renderRandomWord)
+document.querySelector("#user-bttn").addEventListener("click", createUserForm)
