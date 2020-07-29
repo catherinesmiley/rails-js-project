@@ -1,11 +1,14 @@
 const BASE_URL = "http://localhost:3000"
 
 document.addEventListener("DOMContentLoaded", () => {
-    // add createNewGame
+    renderFirstWord()
 })
+
+
 
 function renderFirstWord() {
     // change to renderBigWords/make separate function?
+    // change to renderRandomWord?
     // add clear form/page function
     let bigWordDisplay = document.querySelector("#big-word-display")
     fetch(`${BASE_URL}/big_words`)
@@ -21,6 +24,6 @@ function renderFirstWord() {
 
 function createNewGame() {
     // location.reload(); // check to see if this works
-    let newGameLink = document.querySelector("#new-game")
-    newGameLink.addEventListener("click", console.log("hi"))
 }
+
+document.getElementById("new-game").addEventListener("click", console.log("hi"))
