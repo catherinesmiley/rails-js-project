@@ -1,15 +1,14 @@
 const BASE_URL = "http://localhost:3000"
 
 document.addEventListener("DOMContentLoaded", () => {
-    renderFirstWord()
+    // renderFirstWord()
+
 })
-
-
 
 function renderFirstWord() {
     // change to renderBigWords/make separate function?
     // change to renderRandomWord?
-    // add clear form/page function
+    clearBody()
     let bigWordDisplay = document.querySelector("#big-word-display")
     fetch(`${BASE_URL}/big_words`)
     .then(resp => resp.json())
@@ -22,8 +21,8 @@ function renderFirstWord() {
         })
     }
 
-function createNewGame() {
-    // location.reload(); // check to see if this works
+function clearBody() {
+    document.querySelector("#big-word-display").innerHTML = ""
 }
 
-document.getElementById("new-game").addEventListener("click", console.log("hi"))
+document.querySelector("#new-game").addEventListener("click", renderFirstWord)
