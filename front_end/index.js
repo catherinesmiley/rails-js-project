@@ -53,9 +53,11 @@ function userFormSubmission() {
         body: JSON.stringify(user)
     })
     .then(resp => resp.json())
-    
-    
-}
+    .then(user => {
+        let u = new User(user.id, user.username, user.points)
+        console.log(u)
+    })
+    }
 
 document.querySelector("#new-game").addEventListener("click", renderRandomWord)
 document.querySelector("#user-bttn").addEventListener("click", createUserForm)

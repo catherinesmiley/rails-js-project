@@ -1,6 +1,7 @@
 class User {
-    constructor(username, points) {
+    constructor(id, username, points) {
+        this.id = id;
         this.username = username;
-        this.points = points
+        this.points = points;
     }
 }
