@@ -1,7 +1,6 @@
 const BASE_URL = "http://localhost:3000"
 
 document.addEventListener("DOMContentLoaded", () => {
-    // createUserForm
 })
 
 function renderRandomWord() {
@@ -15,8 +14,8 @@ function renderRandomWord() {
             <h1>${randomWord.name}</h1>
             `
         wordDisplay.innerHTML = wordsHTML
-        })
-    }
+    })
+}
 
 function clearBody() {
     document.querySelector("#word-display").innerHTML = ""
@@ -57,7 +56,30 @@ function userFormSubmission() {
         let u = new User(user.id, user.username, user.points)
         u.newUserGreeting()
     })
-    }
+}
+
+function fetchUsers() {
+    let usersContainer = document.querySelector("#users-container")
+    fetch(`${BASE_URL}/users`)
+    .then(resp => resp.json())
+    .then(users => {
+        for (const user of users) {
+            let u = new User(user.id, user.username, user.points)
+            usersContainer.innerHTML +=
+            `
+            <ul>
+            <li> Username: ${u.username} - Points: ${u.points} </li>
+            </ul>
+            `
+        }
+    })
+}
+
+function createGame() {
+    renderRandomWord();
+    
+}
 
 document.querySelector("#new-game").addEventListener("click", renderRandomWord)
 document.querySelector("#user-bttn").addEventListener("click", createUserForm)
+document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)
