@@ -60,6 +60,7 @@ function userFormSubmission() {
 }
 
 function fetchUsers() {
+    clearBody()
     let usersContainer = document.querySelector("#users-container")
     fetch(`${BASE_URL}/users`)
     .then(resp => resp.json())
