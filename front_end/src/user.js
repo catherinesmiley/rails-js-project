@@ -4,4 +4,8 @@ class User {
         this.username = username;
         this.points = points;
     }
+
+    newUserGreeting() {
+        alert(`Welcome ${this.username}!`)
+    }
 }

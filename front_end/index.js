@@ -55,7 +55,7 @@ function userFormSubmission() {
     .then(resp => resp.json())
     .then(user => {
         let u = new User(user.id, user.username, user.points)
-        console.log(u)
+        u.newUserGreeting()
     })
     }
 
