@@ -6,6 +6,7 @@ class User {
     }
 
     newUserGreeting() {
-        alert(`Welcome ${this.username}!`)
+        alert(`Welcome ${this.username}!`);
+        document.querySelector("#user-form").innerHTML = ""
     }
 }
