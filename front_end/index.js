@@ -19,6 +19,7 @@ function renderRandomWord() {
 
 function clearBody() {
     document.querySelector("#word-display").innerHTML = ""
+    document.querySelector("#game-display").innerHTML = ""
 }
 
 function createUserForm() {
@@ -75,11 +76,24 @@ function fetchUsers() {
     })
 }
 
-function createGame() {
-    renderRandomWord();
-    
+function renderWordInput() {
+    let gameDisplay = document.querySelector("#game-display")
+
+    gameDisplay.innerHTML += 
+    `   <br>
+        <form>
+            Type your words here: <input type="text" id="word-name">
+            <input type="submit" value="Submit Word">
+        </form>
+    `
 }
 
-document.querySelector("#new-game").addEventListener("click", renderRandomWord)
+function createGame() {
+    clearBody()
+    renderRandomWord()
+    renderWordInput()
+}
+
+document.querySelector("#new-game").addEventListener("click", createGame)
 document.querySelector("#user-bttn").addEventListener("click", createUserForm)
 document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)
