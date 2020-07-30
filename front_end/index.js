@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function renderRandomWord() {
-    clearBody()
     let wordDisplay = document.querySelector("#word-display")
     fetch(`${BASE_URL}/words`)
     .then(resp => resp.json())
@@ -24,15 +23,38 @@ function clearBody() {
 }
 
 function createUserForm() {
-    const body = document.body
+    clearBody()
+    let userForm = document.getElementById("user-form")
 
-    body.innerHTML += 
+    userForm.innerHTML += 
+    `   <br>
+        <form>
+            Username: <input type="text" id="username">
+            <input type="submit" value="Create User">
+        </form>
     `
-        <div id="user-form">
-            <input type="text" id="username">
-            <button id="create-user">Create User</button>
-        </div>
-    `
+    userForm.addEventListener("submit", userFormSubmission)
+}
+
+function userFormSubmission() {
+    event.preventDefault();
+    let username = document.getElementById("username").value
+    let user = {
+        username: username, 
+        points: 0
+    }
+
+    fetch(`${BASE_URL}/users`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
+    .then(resp => resp.json())
+    
+    
 }
 
 document.querySelector("#new-game").addEventListener("click", renderRandomWord)
