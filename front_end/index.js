@@ -102,8 +102,26 @@ function createGame() {
 
 function wordFormSubmission() {
     event.preventDefault();
-    console.log(event)
-    let 
+    let name = document.getElementById("word-name").value
+    let word = {
+        name: name
+    }
+    // associate it with the current game
+
+    fetch(`${BASE_URL}/words`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(word)
+    })
+    .then(resp => resp.json())
+    .then(word => {
+        let w = new Word(word.id, word.name, word.game_id)
+    })
+    
+
 }
 
 document.querySelector("#new-game").addEventListener("click", createGame)
