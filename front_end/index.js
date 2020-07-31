@@ -88,17 +88,17 @@ function renderWordInput() {
         </form>
         </div>
     `
+
+    let wordForm = document.querySelector("#word-form")
+    wordForm.addEventListener("submit", wordFormSubmission)
+
 }
 
 function createGame() {
     clearBody()
     renderRandomWord()
     renderWordInput()
-}
-
-function userWordInput() {
-    let wordForm = document.querySelector("#word-form")
-    wordForm.addEventListener("submit", wordFormSubmission)
+    debugger;
 }
 
 function wordFormSubmission() {
