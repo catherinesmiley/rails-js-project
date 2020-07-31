@@ -78,6 +78,7 @@ function fetchUsers() {
 }
 
 function renderWordInput() {
+    // rewrite function name?
     let gameDisplay = document.querySelector("#game-display")
 
     gameDisplay.innerHTML += 
@@ -86,6 +87,9 @@ function renderWordInput() {
             Type your words here: <input type="text" id="word-name">
             <input type="submit" value="Submit Word">
         </form>
+        </div>
+        <div id="user-words-display">
+        
         </div>
     `
 
@@ -98,6 +102,7 @@ function createGame() {
     clearBody()
     renderRandomWord()
     renderWordInput()
+
 }
 
 function wordFormSubmission() {
