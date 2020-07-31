@@ -84,7 +84,7 @@ function renderWordInput() {
     gameDisplay.innerHTML += 
     `   <div id="word-form-container">
         <form id="word-form">
-            Type your words here: <input type="text" id="word-name">
+            Type your words here: <input type="text" id="word-name" onfocus="this.value=''">
             <input type="submit" value="Submit Word">
         </form>
         </div>
@@ -107,7 +107,9 @@ function createGame() {
 
 function wordFormSubmission() {
     event.preventDefault();
-    // document.getElementById("word-form").reset();
+
+    // clear word input field after submission 
+
     let name = document.getElementById("word-name").value
     let word = {
         name: name
