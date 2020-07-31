@@ -95,6 +95,10 @@ function createGame() {
     renderWordInput()
 }
 
+function userWordInput() {
+    
+}
+
 document.querySelector("#new-game").addEventListener("click", createGame)
 document.querySelector("#user-bttn").addEventListener("click", createUserForm)
 document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)
