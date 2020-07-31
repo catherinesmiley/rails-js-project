@@ -82,8 +82,8 @@ function renderWordInput() {
     let gameDisplay = document.querySelector("#game-display")
 
     gameDisplay.innerHTML += 
-    `   <div id="word-form">
-        <form>
+    `   <div id="word-form-container">
+        <form id="word-form">
             Type your words here: <input type="text" id="word-name">
             <input type="submit" value="Submit Word">
         </form>
@@ -93,7 +93,7 @@ function renderWordInput() {
         </div>
     `
 
-    let wordForm = document.querySelector("#word-form")
+    let wordForm = document.querySelector("#word-form-container")
     wordForm.addEventListener("submit", wordFormSubmission)
 
 }
@@ -107,6 +107,7 @@ function createGame() {
 
 function wordFormSubmission() {
     event.preventDefault();
+    // document.getElementById("word-form").reset();
     let name = document.getElementById("word-name").value
     let word = {
         name: name
