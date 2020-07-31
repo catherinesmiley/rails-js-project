@@ -108,8 +108,6 @@ function createGame() {
 function wordFormSubmission() {
     event.preventDefault();
 
-    // clear word input field after submission 
-
     let name = document.getElementById("word-name").value
     let word = {
         name: name
