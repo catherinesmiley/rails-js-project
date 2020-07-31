@@ -89,7 +89,7 @@ function renderWordInput() {
         </form>
         </div>
         <div id="user-words-display">
-        
+
         </div>
     `
 
@@ -124,6 +124,7 @@ function wordFormSubmission() {
     .then(resp => resp.json())
     .then(word => {
         let w = new Word(word.id, word.name, word.game_id)
+        w.renderNewWord() 
     })
 
 }

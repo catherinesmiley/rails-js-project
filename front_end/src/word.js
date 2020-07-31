@@ -6,6 +6,12 @@ class Word {
     }
 
     renderNewWord() {
-        
+        let wordsDisplay = document.querySelector("#user-words-display")
+        wordsDisplay.innerHTML += 
+        `
+        <ul>
+        <li>${this.name}</li>
+        </ul>
+        `
     }
 }
