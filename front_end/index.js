@@ -120,7 +120,6 @@ function wordFormSubmission() {
     .then(word => {
         let w = new Word(word.id, word.name, word.game_id)
     })
-    
 
 }
 

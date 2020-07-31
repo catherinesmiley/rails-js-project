@@ -4,4 +4,8 @@ class Word {
         this.name = name;
         this.game_id = game_id;
     }
+
+    renderNewWord() {
+        
+    }
 }
