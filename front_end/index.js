@@ -98,12 +98,12 @@ function createGame() {
     clearBody()
     renderRandomWord()
     renderWordInput()
-    debugger;
 }
 
 function wordFormSubmission() {
     event.preventDefault();
-    console.log("hi")
+    console.log(event)
+    let 
 }
 
 document.querySelector("#new-game").addEventListener("click", createGame)
