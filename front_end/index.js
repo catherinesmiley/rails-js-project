@@ -8,10 +8,19 @@ function renderRandomWord() {
     fetch(`${BASE_URL}/words`)
     .then(resp => resp.json())
     .then(words => {
-        let randomWord = words[Math.floor(Math.random() * words.length)]
+        // use map instead? filter?
+        const bigWords = []
+        for (let i = 0; i < words.length; i++) {
+            let letters = words[i].name.split('')
+            let letterCount = letters.length
+            if (letterCount > 6) {
+                bigWords.push(letters.join(''))
+            }
+        }
+        let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
         let wordsHTML =
             `
-            <h1>${randomWord.name}</h1>
+            <h1>${randomWord}</h1>
             `
         wordDisplay.innerHTML = wordsHTML
     })
