@@ -112,16 +112,16 @@ function renderWordInput() {
 
 function createGame() {
     clearBody()
-    renderPoints()
+    renderGameStats()
     renderRandomWord()
     renderWordInput()
 }
 
-function renderPoints() {
+function renderGameStats() {
     gameDisplay = document.querySelector("#game-display")
     gameDisplay.innerHTML += 
     `
-    Game Points: 0
+    Game Points: 0 / Total Words: 0
     <p>
     `
 }
