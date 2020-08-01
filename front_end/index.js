@@ -112,9 +112,18 @@ function renderWordInput() {
 
 function createGame() {
     clearBody()
+    renderPoints()
     renderRandomWord()
     renderWordInput()
+}
 
+function renderPoints() {
+    gameDisplay = document.querySelector("#game-display")
+    gameDisplay.innerHTML += 
+    `
+    Game Points: 0
+    <p>
+    `
 }
 
 function wordFormSubmission() {
