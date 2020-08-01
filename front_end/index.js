@@ -20,15 +20,18 @@ function renderRandomWord() {
 function clearBody() {
     document.querySelector("#word-display").innerHTML = ""
     document.querySelector("#game-display").innerHTML = ""
+    document.querySelector("#user-form-container").innerHTML = ""
+    document.querySelector("#users-container").innerHTML = ""
 }
 
 function createUserForm() {
     clearBody()
-    let userForm = document.getElementById("user-form")
+    let userForm = document.getElementById("user-form-container")
 
     userForm.innerHTML += 
-    `   <br>
-        <form>
+    `   
+        <br>
+        <form id="user-form">
             Username: <input type="text" id="username">
             <input type="submit" value="Create User">
         </form>
@@ -38,6 +41,7 @@ function createUserForm() {
 
 function userFormSubmission() {
     event.preventDefault();
+    document.getElementById("user-form").innerHTML = ""
     let username = document.getElementById("username").value
     let user = {
         username: username, 
@@ -55,7 +59,6 @@ function userFormSubmission() {
     .then(resp => resp.json())
     .then(user => {
         let u = new User(user.id, user.username, user.points)
-        u.newUserGreeting()
     })
 }
 

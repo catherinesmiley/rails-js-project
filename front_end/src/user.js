@@ -6,7 +6,8 @@ class User {
     }
 
     newUserGreeting() {
+        // render error message if username is blank
         alert(`Welcome ${this.username}!`);
         document.querySelector("#user-form").innerHTML = ""
     }
-}
+}   
