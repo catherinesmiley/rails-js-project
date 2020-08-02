@@ -52,9 +52,7 @@ function createUserForm() {
 }
 
 function userFormSubmission() {
-    // new user not being created
     event.preventDefault();
-    document.getElementById("user-form").innerHTML = ""
     let username = document.getElementById("username").value
     let user = {
         username: username, 
@@ -72,8 +70,8 @@ function userFormSubmission() {
     .then(resp => resp.json())
     .then(user => {
         let u = new User(user.id, user.username, user.points)
+        u.newUserGreeting()
     })
-    // render newUserGreeting
 }
 
 function fetchUsers() {
