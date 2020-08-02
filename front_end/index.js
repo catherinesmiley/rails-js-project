@@ -47,10 +47,12 @@ function createUserForm() {
             <input type="submit" value="Create User">
         </form>
     `
+    
     userForm.addEventListener("submit", userFormSubmission)
 }
 
 function userFormSubmission() {
+    // new user not being created
     event.preventDefault();
     document.getElementById("user-form").innerHTML = ""
     let username = document.getElementById("username").value
@@ -71,6 +73,7 @@ function userFormSubmission() {
     .then(user => {
         let u = new User(user.id, user.username, user.points)
     })
+    // render newUserGreeting
 }
 
 function fetchUsers() {
@@ -122,9 +125,12 @@ function createGame() {
 function renderGameStats() {
     gameDisplay = document.querySelector("#game-display")
     gameDisplay.innerHTML += 
+    // add game id to div
     `
+    <div id="game-id">
     Game Points: 0 / Total Words: 0
     <p>
+    </div>
     `
 }
 
@@ -134,7 +140,7 @@ function wordFormSubmission() {
     let name = document.getElementById("word-name").value
     // let game_id = 
     let word = {
-        name: name,
+        name: name
         // game_id: game_id
     }
     // associate it with the current game
