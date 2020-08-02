@@ -10,8 +10,9 @@ class Word {
         wordsDisplay.innerHTML += 
         `
         <ul>
-        <li>${this.name}</li>
+        <li id="${this.game_id}">${this.name}</li>
         </ul>
         `
     }
+    // game_id is undefined
 }

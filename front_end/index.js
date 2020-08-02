@@ -17,6 +17,8 @@ function renderRandomWord() {
                 bigWords.push(letters.join(''))
             }
         }
+        console.log(words)
+        console.log(bigWords)
         let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
         let wordsHTML =
             `
@@ -130,8 +132,10 @@ function wordFormSubmission() {
     event.preventDefault();
 
     let name = document.getElementById("word-name").value
+    // let game_id = 
     let word = {
-        name: name
+        name: name,
+        // game_id: game_id
     }
     // associate it with the current game
 
@@ -149,6 +153,7 @@ function wordFormSubmission() {
         w.renderNewWord() 
     })
 
+    document.getElementById("word-form").reset();
 }
 
 document.querySelector("#new-game").addEventListener("click", createGame)
