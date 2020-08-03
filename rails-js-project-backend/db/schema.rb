@@ -10,27 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_173325) do
-
-  create_table "big_words", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2020_08_03_210409) do
 
   create_table "games", force: :cascade do |t|
     t.integer "game_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-  end
-
-  create_table "small_words", force: :cascade do |t|
-    t.string "name"
-    t.integer "big_word_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["big_word_id"], name: "index_small_words_on_big_word_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +34,5 @@ ActiveRecord::Schema.define(version: 2020_07_29_173325) do
     t.index ["game_id"], name: "index_words_on_game_id"
   end
 
-  add_foreign_key "small_words", "big_words"
   add_foreign_key "words", "games"
 end
