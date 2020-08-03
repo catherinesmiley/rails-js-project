@@ -26,7 +26,7 @@ function renderRandomWord() {
             `
         wordDisplay.innerHTML = wordsHTML
 
-        let bigWord = document.querySelector("#big-word").innerText
+        fetchValidWords() 
 
     })
 }
@@ -163,8 +163,20 @@ function wordFormSubmission() {
     document.getElementById("word-form").reset();
 }
 
-function checkWordValidity() {
-    
+function fetchValidWords() {
+    let bigWord = document.querySelector("#big-word").innerText
+    let validBigWords = []
+    fetch(`${BASE_URL}/valid_words`)
+    .then(resp => resp.json())
+    .then(validWords => {
+        for (const validWord of validWords) {
+            let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
+            if (vw.word_id == bigWord.id) {
+                validBigWords.push(vw)
+            }
+            console.log(validBigWords)
+        }
+    })
 }
 
 document.querySelector("#new-game").addEventListener("click", createGame)
