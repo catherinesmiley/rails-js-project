@@ -17,6 +17,7 @@ function renderRandomWord() {
                 bigWords.push(letters.join(''))
             }
         }
+        console.log(bigWords)
         let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
         let wordsHTML =
             `
