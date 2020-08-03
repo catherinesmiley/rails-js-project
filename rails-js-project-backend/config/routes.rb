@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :valid_words
   resources :words
   resources :games
   resources :users

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_210409) do
+ActiveRecord::Schema.define(version: 2020_08_03_211721) do
 
   create_table "games", force: :cascade do |t|
     t.integer "game_number"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2020_08_03_210409) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "valid_words", force: :cascade do |t|
+    t.string "name"
+    t.integer "word_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["word_id"], name: "index_valid_words_on_word_id"
+  end
+
   create_table "words", force: :cascade do |t|
     t.string "name"
     t.integer "game_id"
@@ -34,5 +42,6 @@ ActiveRecord::Schema.define(version: 2020_08_03_210409) do
     t.index ["game_id"], name: "index_words_on_game_id"
   end
 
+  add_foreign_key "valid_words", "words"
   add_foreign_key "words", "games"
 end
