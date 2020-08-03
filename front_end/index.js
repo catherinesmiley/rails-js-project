@@ -17,13 +17,17 @@ function renderRandomWord() {
                 bigWords.push(letters.join(''))
             }
         }
-        console.log(bigWords)
         let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
         let wordsHTML =
             `
+            <div id="big-word">
             <h1>${randomWord}</h1>
+            </div>
             `
         wordDisplay.innerHTML = wordsHTML
+
+        let bigWord = document.querySelector("#big-word").innerText
+
     })
 }
 
@@ -157,6 +161,10 @@ function wordFormSubmission() {
     })
 
     document.getElementById("word-form").reset();
+}
+
+function checkWordValidity() {
+    
 }
 
 document.querySelector("#new-game").addEventListener("click", createGame)
