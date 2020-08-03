@@ -172,10 +172,10 @@ function fetchValidWords() {
         for (const validWord of validWords) {
             let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
             if (vw.word_id == bigWord.id) {
-                validBigWords.push(vw)
+                validBigWords.push(vw.name)
             }
-            console.log(validBigWords)
         }
+        console.log(validBigWords)
     })
 }
 
