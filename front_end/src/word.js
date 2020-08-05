@@ -15,4 +15,5 @@ class Word {
         `
     }
     // game_id is undefined
+
 }

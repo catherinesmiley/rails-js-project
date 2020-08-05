@@ -10,14 +10,17 @@ function renderRandomWord() {
     .then(words => {
         // use map instead? filter?
         const bigWords = []
-        for (let i = 0; i < words.length; i++) {
-            let letters = words[i].name.split('')
+        for (const word of words) {
+            new Word(word.id, word.name, word.game_id)
+            let letters = word.name.split('')
             let letterCount = letters.length
             if (letterCount > 6) {
                 bigWords.push(letters.join(''))
             }
         }
+
         let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
+
         let wordsHTML =
             `
             <div id="big-word">
@@ -161,21 +164,23 @@ function wordFormSubmission() {
     })
 
     document.getElementById("word-form").reset();
+
 }
 
 function fetchValidWords() {
     let bigWord = document.querySelector("#big-word").innerText
-    let validBigWords = []
+    let bigWordValidWords = []
     fetch(`${BASE_URL}/valid_words`)
     .then(resp => resp.json())
     .then(validWords => {
         for (const validWord of validWords) {
             let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
             if (vw.word_id == bigWord.id) {
-                validBigWords.push(vw.name)
+                bigWordValidWords.push(vw.name)
             }
+            // validBigWords includes all valid words
         }
-        console.log(validBigWords)
+        console.log(bigWordValidWords)
     })
 }
 
