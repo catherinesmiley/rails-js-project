@@ -5,6 +5,19 @@ class Word {
         this.game_id = game_id;
     }
 
+    renderRandomWord(randomWord) {
+        let wordDisplay = document.querySelector("#word-display")
+        console.log(randomWord)
+        let wordsHTML = 
+        `
+        <div id="big-word" data-id=${this.id}>
+        <h1>${this.name}</h1>
+        </div>
+        `
+
+        wordDisplay.innerHTML += wordsHTML
+    }
+
     renderNewWord() {
         let wordsDisplay = document.querySelector("#user-words-display")
         wordsDisplay.innerHTML += 

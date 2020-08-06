@@ -3,31 +3,37 @@ const BASE_URL = "http://localhost:3000"
 document.addEventListener("DOMContentLoaded", () => {
 })
 
-function renderRandomWord() {
+function fetchRandomWord() {
     let wordDisplay = document.querySelector("#word-display")
+
     fetch(`${BASE_URL}/words`)
     .then(resp => resp.json())
     .then(words => {
         // use map instead? filter?
         const bigWords = []
         for (const word of words) {
-            new Word(word.id, word.name, word.game_id)
+            let w = new Word(word.id, word.name, word.game_id)
             let letters = word.name.split('')
             let letterCount = letters.length
+            let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
             if (letterCount > 6) {
-                bigWords.push(letters.join('')) 
+                bigWords.push(w.name) 
+                // let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
+                return w.renderRandomWord(randomWord)
+                // console.log(randomWord)
             }
+
         }
 
-        let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
+        // let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
 
-        let wordsHTML =
-            `
-            <div id="big-word">
-            <h1>${randomWord}</h1>
-            </div>
-            `
-        wordDisplay.innerHTML += wordsHTML
+        // let wordsHTML =
+        //     `
+        //     <div id="big-word">
+        //     <h1>${randomWord}</h1>
+        //     </div>
+        //     `
+        // wordDisplay.innerHTML += wordsHTML
 
         fetchValidWords() 
 
@@ -144,17 +150,14 @@ function createGame() {
     .then(game => {
         let g = new Game(game.id, game.user_id)
         g.renderGame()
-        renderRandomWord()
+        fetchRandomWord()
         renderWordInput()
     })
 
 }
 
 function wordFormSubmission() {
-    debugger;
     event.preventDefault();
-    debugger;
-
     let name = document.getElementById("word-name").value
     // let game_id = 
     let word = {
@@ -192,9 +195,8 @@ function fetchValidWords() {
             if (vw.word_id == bigWord.id) {
                 bigWordValidWords.push(vw.name)
             }
-            // validBigWords includes all valid words
         }
-        console.log(bigWordValidWords)
+        // console.log(bigWordValidWords)
     })
 }
 
