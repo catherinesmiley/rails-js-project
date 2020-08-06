@@ -5,9 +5,9 @@ class Word {
         this.game_id = game_id;
     }
 
-    renderRandomWord(randomWord) {
+    renderRandomWord() {
         let wordDisplay = document.querySelector("#word-display")
-        console.log(randomWord)
+        // console.log(randomWord)
         let wordsHTML = 
         `
         <div id="big-word" data-id=${this.id}>
