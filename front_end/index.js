@@ -27,7 +27,7 @@ function renderRandomWord() {
             <h1>${randomWord}</h1>
             </div>
             `
-        wordDisplay.innerHTML = wordsHTML
+        wordDisplay.innerHTML += wordsHTML
 
         fetchValidWords() 
 
@@ -124,8 +124,8 @@ function renderWordInput() {
 function startNewGame() {
     clearBody()
     createGame()
-    renderRandomWord()
-    renderWordInput()
+    // renderRandomWord()
+    // renderWordInput()
 }
 
 function createGame() {
@@ -146,12 +146,16 @@ function createGame() {
     .then(game => {
         let g = new Game(game.id, game.user_id)
         g.renderGame()
+        renderRandomWord()
+        renderWordInput()
     })
 
 }
 
 function wordFormSubmission() {
+    debugger;
     event.preventDefault();
+    debugger;
 
     let name = document.getElementById("word-name").value
     // let game_id = 
