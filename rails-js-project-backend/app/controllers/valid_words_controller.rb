@@ -5,7 +5,7 @@ class ValidWordsController < ApplicationController
   def index
     @valid_words = ValidWord.all
 
-    render json: @valid_words
+    render json: @valid_words, include: [:word]
   end
 
   # GET /valid_words/1

@@ -124,12 +124,10 @@ function renderWordInput() {
 function startNewGame() {
     clearBody()
     createGame()
-    // renderRandomWord()
-    // renderWordInput()
 }
 
 function createGame() {
-    // have to have a user to start a game
+    // have to have a user to start a game - add error message
     let currentUser = document.getElementById("current-user")
     let currentUserId = currentUser.getAttribute('data-id')
     fetch(`${BASE_URL}/games`, {
