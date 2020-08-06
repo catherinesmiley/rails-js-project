@@ -173,18 +173,22 @@ function wordFormSubmission() {
 }
 
 function fetchValidWords() {
-    let bigWord = document.querySelector("#big-word").innerText
+    let bigWord = document.getElementById("big-word")
+    let bigWordId = bigWord.getAttribute('data-id')
     let bigWordValidWords = []
     fetch(`${BASE_URL}/valid_words`)
     .then(resp => resp.json())
     .then(validWords => {
         for (const validWord of validWords) {
             let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
-            if (vw.word_id == bigWord.id) {
-                bigWordValidWords.push(vw.name)
+            console.log("vw-word-id", validWord.id)
+            // let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
+            if (validWord.word_id == bigWordId) {
+                // let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
+                bigWordValidWords.push(vw)
+                
             }
         }
-        // console.log(bigWordValidWords)
     })
 }
 

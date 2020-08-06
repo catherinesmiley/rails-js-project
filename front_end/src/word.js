@@ -7,7 +7,6 @@ class Word {
 
     renderRandomWord() {
         let wordDisplay = document.querySelector("#word-display")
-        // console.log(randomWord)
         let wordsHTML = 
         `
         <div id="big-word" data-id=${this.id}>
