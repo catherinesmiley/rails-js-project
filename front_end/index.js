@@ -15,7 +15,7 @@ function renderRandomWord() {
             let letters = word.name.split('')
             let letterCount = letters.length
             if (letterCount > 6) {
-                bigWords.push(letters.join(''))
+                bigWords.push(letters.join('')) 
             }
         }
 
@@ -118,13 +118,27 @@ function renderWordInput() {
     wordForm.addEventListener("submit", wordFormSubmission)
 
 }
-
-function createGame() {
+    
+function startNewGame() {
     clearBody()
+    // createGame()
     renderGameStats()
     renderRandomWord()
     renderWordInput()
 }
+
+// function createGame() {
+//     fetch(`${BASE_URL}/games`, {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Accept": "application/json"
+//         },
+//         body: JSON.stringify({
+//             id: id
+//         })
+//     })
+// }
 
 function renderGameStats() {
     gameDisplay = document.querySelector("#game-display")
@@ -184,6 +198,6 @@ function fetchValidWords() {
     })
 }
 
-document.querySelector("#new-game").addEventListener("click", createGame)
+document.querySelector("#new-game").addEventListener("click", startNewGame)
 document.querySelector("#user-bttn").addEventListener("click", createUserForm)
 document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)

@@ -7,11 +7,14 @@ class User {
 
     newUserGreeting() {
         // render error message if username is blank
-        if (this.username != "") {
-            alert(`Welcome ${this.username}!`);
-            document.querySelector("#user-form").innerHTML = ""
-        } else {
-            {message: error.message}
-        }
+        console.log("hi")
+        let userContainer = document.querySelector("#users-container")
+        userContainer.innerHTML +=
+        `
+        <div id="user-${this.id}">
+        <h3>${this.username} - ${this.points} points</h3>
+        </div>
+        `
     }
+
 }
