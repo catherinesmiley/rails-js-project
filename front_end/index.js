@@ -124,7 +124,6 @@ function renderWordInput() {
 function startNewGame() {
     clearBody()
     createGame()
-    // renderGameStats()
     renderRandomWord()
     renderWordInput()
 }
@@ -150,18 +149,6 @@ function createGame() {
     })
 
 }
-
-// function renderGameStats() {
-//     gameDisplay = document.querySelector("#game-display")
-//     gameDisplay.innerHTML += 
-//     // add game id to div
-//     `
-//     <div id="game-id">
-//     Game Points: 0 / Total Words: 0
-//     <p>
-//     </div>
-//     `
-// }
 
 function wordFormSubmission() {
     event.preventDefault();
