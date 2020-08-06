@@ -5,14 +5,14 @@ class Game {
         this.user_id = user_id;
     }
     
-    // renderGame() {
-    //     gameDisplay = document.querySelector("#game-display").innerHTML
-    //     gameDisplay.innerHTML += 
-    //     `
-    //     <div id=${this.id}>
-    //     Game Points: 0 / Total Words: 0
-    //     <p>
-    //     </div>
-    //     `
-    // }
+    renderGame() {
+        let gameDisplay = document.querySelector("#game-display")
+        gameDisplay.innerHTML += 
+        `
+        <div id="current-game" data-id=${this.id}>
+        Game Points: 0 / Total Words: 0
+        <p>
+        </div>
+        `
+    }
 }
