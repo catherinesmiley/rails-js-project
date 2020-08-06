@@ -180,15 +180,15 @@ function fetchValidWords() {
     .then(resp => resp.json())
     .then(validWords => {
         for (const validWord of validWords) {
-            let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
-            console.log("vw-word-id", validWord.id)
+            let vw = new ValidWord(validWord.id, validWord.name, validWord.word.id)
             // let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
-            if (validWord.word_id == bigWordId) {
+            if (validWord.word.id == bigWordId) {
                 // let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
-                bigWordValidWords.push(vw)
+                bigWordValidWords.push(validWord)
                 
             }
         }
+        console.log(bigWordValidWords)
     })
 }
 
