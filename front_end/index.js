@@ -12,36 +12,21 @@ function fetchRandomWord() {
         // use map instead? filter?
         const bigWords = []
         for (const word of words) {
-            // let w = new Word(word.id, word.name, word.game_id)
             let letters = word.name.split('')
             let letterCount = letters.length
             if (letterCount > 6) {
                 bigWords.push(word) 
             }
         } 
-                let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
-                let w = new Word(randomWord.id, randomWord.name, randomWord.game_id)
-                w.renderRandomWord()
-                // console.log(randomWord)
 
-                fetchValidWords()
-            })
-            // let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
-            // console.log("random word", randomWord)
-            // return w.renderRandomWord(randomWord)
+            let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
+            let w = new Word(randomWord.id, randomWord.name, randomWord.game_id)
+            w.renderRandomWord()
 
-        }
+            fetchValidWords()
+        })
 
-        // let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
-
-        // let wordsHTML =
-        //     `
-        //     <div id="big-word">
-        //     <h1>${randomWord}</h1>
-        //     </div>
-        //     `
-        // wordDisplay.innerHTML += wordsHTML
-
+    }
 
 function clearBody() {
     document.querySelector("#word-display").innerHTML = ""
