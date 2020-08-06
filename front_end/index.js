@@ -38,7 +38,8 @@ function clearBody() {
     document.querySelector("#word-display").innerHTML = ""
     document.querySelector("#game-display").innerHTML = ""
     document.querySelector("#user-form-container").innerHTML = ""
-    document.querySelector("#users-container").innerHTML = ""
+    // document.querySelector("#users-container").innerHTML = ""
+    // need to clear after viewing all users, just not after creating new - add another div?
 }
 
 function createUserForm() {
@@ -78,6 +79,7 @@ function userFormSubmission() {
         let u = new User(user.id, user.username, user.points)
         u.newUserGreeting()
     })
+    // clear form after submission
 }
 
 function fetchUsers() {
@@ -121,24 +123,33 @@ function renderWordInput() {
     
 function startNewGame() {
     clearBody()
-    // createGame()
+    createGame()
     renderGameStats()
     renderRandomWord()
     renderWordInput()
 }
 
-// function createGame() {
-//     fetch(`${BASE_URL}/games`, {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Accept": "application/json"
-//         },
-//         body: JSON.stringify({
-//             id: id
-//         })
-//     })
-// }
+function createGame() {
+    // have to have a user to start a game
+    let currentUser = document.getElementById("current-user")
+    let currentUserId = currentUser.getAttribute('data-id')
+    fetch(`${BASE_URL}/games`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            user_id: currentUserId
+        })
+    })
+    .then(resp => resp.json())
+    .then(game => {
+        let g = new Game(game.id, game.user_id)
+        console.log(g)
+    })
+
+}
 
 function renderGameStats() {
     gameDisplay = document.querySelector("#game-display")
