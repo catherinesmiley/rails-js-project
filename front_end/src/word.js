@@ -1,3 +1,5 @@
+let validWords
+
 class Word {
     constructor(id, name, game_id) {
         this.id = id;
@@ -15,16 +17,20 @@ class Word {
         `
 
         wordDisplay.innerHTML += wordsHTML
+
+        validWords = fetchValidWords()
     }
 
     renderNewWord() {
         let wordsDisplay = document.querySelector("#user-words-display")
-        let bigWordValidWords = fetchValidWords()
-        debugger;
 
-        if (bigWordValidWords.includes(this)) {
+        let words = validWords.map(function(element){
+            return element.name
+        })
+        
+        if (words.includes(this.name)) {
             wordsDisplay.innerHTML += 
-            `
+            `   
             <ul>
             <li id="${this.game_id}">${this.name}</li>
             </ul>

@@ -23,7 +23,7 @@ function fetchRandomWord() {
             let w = new Word(randomWord.id, randomWord.name, randomWord.game_id)
             w.renderRandomWord()
 
-            fetchValidWords()
+            // fetchValidWords()
         })
 
     }
