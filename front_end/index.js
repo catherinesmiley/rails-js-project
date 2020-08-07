@@ -174,8 +174,13 @@ function wordFormSubmission() {
     })
     .then(resp => resp.json())
     .then(word => {
-        let w = new Word(word.id, word.name, word.game.id)  
-        w.renderNewWord()      
+        if (word.id) {
+            let w = new Word(word.id, word.name, word.game.id)  
+            w.renderNewWord()  
+        } else {
+            alert("That is not a valid word!")
+        }
+            
     })
 
     document.getElementById("word-form").reset();
