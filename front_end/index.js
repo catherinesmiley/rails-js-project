@@ -20,7 +20,9 @@ function fetchRandomWord() {
         }
 
             let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
-            let w = new Word(randomWord.id, randomWord.name, randomWord.game_id)
+            let currentGame = document.getElementById("current-game")
+            let currentGameId = currentGame.getAttribute('data-id')
+            let w = new Word(randomWord.id, randomWord.name, currentGameId)
             w.renderRandomWord()
         })
 
@@ -68,7 +70,6 @@ function userFormSubmission() {
     })
     .then(resp => resp.json())
     .then(user => {
-        console.log("user", user.username)
         if (user.username != "can't be blank") {
             let u = new User(user.id, user.username, user.points)
             u.newUserGreeting()
@@ -156,12 +157,12 @@ function createGame() {
 function wordFormSubmission() {
     event.preventDefault();
     let name = document.getElementById("word-name").value
-    // let game_id = 
+    let currentGame = document.getElementById("current-game")
+    let currentGameId = currentGame.getAttribute('data-id')
     let word = {
-        name: name
-        // game_id: game_id
+        name: name,
+        game_id: currentGameId
     }
-    // associate it with the current game
 
     fetch(`${BASE_URL}/words`, {
         method: "POST",
@@ -173,7 +174,7 @@ function wordFormSubmission() {
     })
     .then(resp => resp.json())
     .then(word => {
-        let w = new Word(word.id, word.name, word.game_id)  
+        let w = new Word(word.id, word.name, word.game.id)  
         w.renderNewWord()      
     })
 

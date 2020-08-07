@@ -45,6 +45,5 @@ class Word {
             alert("That is not a valid word!")
         }
     }
-    // game_id is undefined
 
 }
