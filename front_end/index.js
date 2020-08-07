@@ -164,9 +164,12 @@ function wordFormSubmission() {
     })
     .then(resp => resp.json())
     .then(word => {
-        let w = new Word(word.id, word.name, word.game_id)
-        w.renderNewWord() 
+        let w = new Word(word.id, word.name, word.game_id)  
+        debugger;
+        w.renderNewWord()      
     })
+
+    fetchValidWords()
 
     document.getElementById("word-form").reset();
 
@@ -181,16 +184,24 @@ function fetchValidWords() {
     .then(validWords => {
         for (const validWord of validWords) {
             let vw = new ValidWord(validWord.id, validWord.name, validWord.word.id)
-            // let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
             if (validWord.word.id == bigWordId) {
-                // let vw = new ValidWord(validWord.id, validWord.name, validWord.word_id)
                 bigWordValidWords.push(validWord)
-                
             }
         }
-        console.log(bigWordValidWords)
     })
+
+    // if (bigWordValidWords.includes(w)) {
+    //     w.renderNewWord() 
+    // } else {
+    //     return "error!"
+    // }
+
+    // validateWordInput()
 }
+
+// function validateWordInput() {
+
+// }
 
 document.querySelector("#new-game").addEventListener("click", startNewGame)
 document.querySelector("#user-bttn").addEventListener("click", createUserForm)
