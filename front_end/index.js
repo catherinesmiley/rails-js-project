@@ -73,7 +73,8 @@ function userFormSubmission() {
         let u = new User(user.id, user.username, user.points)
         u.newUserGreeting()
     })
-    // clear form after submission
+    
+    document.getElementById("user-form").reset();
 }
 
 function fetchUsers() {
