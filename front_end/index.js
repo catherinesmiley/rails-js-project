@@ -17,7 +17,7 @@ function fetchRandomWord() {
             if (letterCount > 6) {
                 bigWords.push(word) 
             }
-        } 
+        }
 
             let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
             let w = new Word(randomWord.id, randomWord.name, randomWord.game_id)
@@ -166,11 +166,8 @@ function wordFormSubmission() {
     .then(resp => resp.json())
     .then(word => {
         let w = new Word(word.id, word.name, word.game_id)  
-        debugger;
         w.renderNewWord()      
     })
-
-    fetchValidWords()
 
     document.getElementById("word-form").reset();
 
@@ -191,18 +188,9 @@ function fetchValidWords() {
         }
     })
 
-    // if (bigWordValidWords.includes(w)) {
-    //     w.renderNewWord() 
-    // } else {
-    //     return "error!"
-    // }
+    return bigWordValidWords
 
-    // validateWordInput()
 }
-
-// function validateWordInput() {
-
-// }
 
 document.querySelector("#new-game").addEventListener("click", startNewGame)
 document.querySelector("#user-bttn").addEventListener("click", createUserForm)

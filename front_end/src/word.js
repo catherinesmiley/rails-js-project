@@ -19,12 +19,19 @@ class Word {
 
     renderNewWord() {
         let wordsDisplay = document.querySelector("#user-words-display")
-        wordsDisplay.innerHTML += 
-        `
-        <ul>
-        <li id="${this.game_id}">${this.name}</li>
-        </ul>
-        `
+        let bigWordValidWords = fetchValidWords()
+        debugger;
+
+        if (bigWordValidWords.includes(this)) {
+            wordsDisplay.innerHTML += 
+            `
+            <ul>
+            <li id="${this.game_id}">${this.name}</li>
+            </ul>
+            `
+        } else {
+            console.log("error!!!!")
+        }
     }
     // game_id is undefined
 
