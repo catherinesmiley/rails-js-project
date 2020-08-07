@@ -68,9 +68,18 @@ function userFormSubmission() {
     })
     .then(resp => resp.json())
     .then(user => {
-        let u = new User(user.id, user.username, user.points)
-        u.newUserGreeting()
+        console.log("user", user.username)
+        if (user.username != "can't be blank") {
+            let u = new User(user.id, user.username, user.points)
+            u.newUserGreeting()
+        } else {
+            alert("Username can't be blank!")
+        }
     })
+    // .catch(function(error) {
+    //     alert("Username can't be blank!")
+    //     console.log("error message", error.message)
+    // })
     
     document.getElementById("user-form").reset();
 }
