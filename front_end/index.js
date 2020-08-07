@@ -130,12 +130,13 @@ function createGame() {
             "Accept": "application/json"
         },
         body: JSON.stringify({
+            game_number: currentUserId,
             user_id: currentUserId
         })
     })
     .then(resp => resp.json())
     .then(game => {
-        let g = new Game(game.id, game.user_id)
+        let g = new Game(game.id, game.game_number, game.user.id)
         g.renderGame()
         fetchRandomWord()
         renderWordInput()
