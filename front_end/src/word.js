@@ -26,12 +26,29 @@ class Word {
         let findWordCount = document.querySelector("#word-count")
         let wordCount = document.querySelector("#word-count").innerHTML
         let newWordCount = (parseInt(wordCount) + 1)
+        let findGamePoints = document.querySelector("#game-points")
+        let gamePoints = document.querySelector("#game-points").innerHTML
+
+        let letters = this.name.split('')
+        let letterCount = letters.length
+        let wordValue
+
+        if (letterCount < 5) {
+            wordValue = 1
+        } else if (letterCount == 5) {
+            wordValue = 2
+        } else {
+            wordValue = 3
+        }
+ 
+        let newGamePoints = (parseInt(gamePoints) + wordValue)
 
         let words = validWords.map(function(element){
             return element.name
         })
         
         if (words.includes(this.name)) {
+            // use filter instead to not show duplicates?
             wordsDisplay.innerHTML += 
             `   
             <ul>
@@ -40,6 +57,7 @@ class Word {
             `
             
             findWordCount.innerHTML = newWordCount
+            findGamePoints.innerHTML = newGamePoints
 
         } else {
             alert("That is not a valid word!")
