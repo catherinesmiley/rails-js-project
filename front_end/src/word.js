@@ -23,6 +23,9 @@ class Word {
 
     renderNewWord() {
         let wordsDisplay = document.querySelector("#user-words-display")
+        let findWordCount = document.querySelector("#word-count")
+        let wordCount = document.querySelector("#word-count").innerHTML
+        let newWordCount = (parseInt(wordCount) + 1)
 
         let words = validWords.map(function(element){
             return element.name
@@ -35,8 +38,11 @@ class Word {
             <li id="${this.game_id}">${this.name}</li>
             </ul>
             `
+            
+            findWordCount.innerHTML = newWordCount
+
         } else {
-            console.log("error!!!!")
+            alert("That is not a valid word!")
         }
     }
     // game_id is undefined

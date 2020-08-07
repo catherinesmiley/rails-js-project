@@ -10,8 +10,8 @@ class Game {
         gameDisplay.innerHTML += 
         `
         <div id="current-game" data-id=${this.id}>
-        Game Points: 0 / Total Words: 0
-        <p>
+        Game Points: <p id="game-points">0</p>
+        Word Count: <p id="word-count">0</p>
         </div>
         `
     }

@@ -22,8 +22,6 @@ function fetchRandomWord() {
             let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
             let w = new Word(randomWord.id, randomWord.name, randomWord.game_id)
             w.renderRandomWord()
-
-            // fetchValidWords()
         })
 
     }

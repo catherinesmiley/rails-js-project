@@ -41,3 +41,4 @@ crooked.valid_words.create([{ name: "cooked" }, { name: "cooker" }, { name: "cor
 { name: "odor" }, { name: "ordo" }, { name: "reck" }, { name: "redo" }, { name: "rock" },
 { name: "rode" }, { name: "roed" }, { name: "roke" }, { name: "rood" }, { name: "rook" }
 ]) 
+
