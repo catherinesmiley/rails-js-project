@@ -7,3 +7,7 @@ body {
     background-position: center;
     font-family: 'Stylish', monospace !important;
   }
+
+  li {
+      text-align: left;
+  }
