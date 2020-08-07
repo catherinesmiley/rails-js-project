@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-image: linear-gradient(to right, rgba(235,0,0,0));
+    background-image: linear-gradient(to right, rgba(235,214,253,0), rgba(235,214,253,1));
     background-repeat: no-repeat;
     background-size: cover;
     height: 950px;
