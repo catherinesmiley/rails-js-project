@@ -17,8 +17,8 @@ class Word {
         `
 
         wordDisplay.innerHTML += wordsHTML
-
         validWords = fetchValidWords()
+        console.log(validWords)
     }
 
     renderNewWord() {
@@ -51,14 +51,12 @@ class Word {
         })
         
         if (words.includes(this.name)) {
-            // use filter instead to not show duplicates?
             wordsDisplay.innerHTML += 
             `   
             <ul>
             <li id="${this.game_id}">${this.name}</li>
             </ul>
             `
-            // display points per word?
             
             findWordCount.innerHTML = newWordCount
             findGamePoints.innerHTML = newGamePoints

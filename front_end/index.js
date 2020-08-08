@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000"
+const BASE_URL = "http://localhost:3090"
 
 document.addEventListener("DOMContentLoaded", () => {
 })
@@ -203,7 +203,6 @@ function fetchValidWords() {
     })
 
     return bigWordValidWords
-
 }
 
 function persistGameData() {
@@ -215,13 +214,12 @@ function persistGameData() {
     console.log("points", points)
 
     let user = {
-        id: currentUserId,
         username: username,
         points: points
     }
 
-    fetch(`${BASE_URL}/users`, {
-        method: "POST",
+    fetch(`${BASE_URL}/users/${currentUserId}`, {
+        method: "PATCH",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"
@@ -229,7 +227,7 @@ function persistGameData() {
         body: JSON.stringify(user)
     })
     .then(resp => resp.json())
-    .then(user => console.log(user))         
+    .then(user => user)  
 }
 
 document.querySelector("#new-game").addEventListener("click", startNewGame)
