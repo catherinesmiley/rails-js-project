@@ -206,6 +206,32 @@ function fetchValidWords() {
 
 }
 
+function persistGameData() {
+    let currentUser = document.getElementById("current-user")
+    let currentUserId = currentUser.getAttribute('data-id')
+    let username = document.querySelector("#user-id").innerHTML
+    console.log("username", username)
+    let points = document.querySelector("#user-points").innerHTML
+    console.log("points", points)
+
+    let user = {
+        id: currentUserId,
+        username: username,
+        points: points
+    }
+
+    fetch(`${BASE_URL}/users`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
+    .then(resp => resp.json())
+    .then(user => console.log(user))         
+}
+
 document.querySelector("#new-game").addEventListener("click", startNewGame)
 document.querySelector("#user-bttn").addEventListener("click", createUserForm)
 document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)

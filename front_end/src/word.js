@@ -28,6 +28,8 @@ class Word {
         let newWordCount = (parseInt(wordCount) + 1)
         let findGamePoints = document.querySelector("#game-points")
         let gamePoints = document.querySelector("#game-points").innerHTML
+        let findUserPoints = document.querySelector("#user-points")
+        let userPoints = document.querySelector("#user-points").innerHTML
 
         let letters = this.name.split('')
         let letterCount = letters.length
@@ -42,6 +44,7 @@ class Word {
         }
  
         let newGamePoints = (parseInt(gamePoints) + wordValue)
+        let newUserPoints = (parseInt(userPoints) + wordValue)
 
         let words = validWords.map(function(element){
             return element.name
@@ -55,13 +58,16 @@ class Word {
             <li id="${this.game_id}">${this.name}</li>
             </ul>
             `
+            // display points per word?
             
             findWordCount.innerHTML = newWordCount
             findGamePoints.innerHTML = newGamePoints
+            findUserPoints.innerHTML = newUserPoints
 
         } else {
             alert("That is not a valid word!")
         }
+        persistGameData()
     }
 
 }

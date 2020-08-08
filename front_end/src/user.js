@@ -11,7 +11,8 @@ class User {
         userContainer.innerHTML +=
         `
         <div id="current-user" data-id=${this.id}>
-        <h3>${this.username} - ${this.points} points</h3>
+        <h3 id="user-id">${this.username}</h3>
+        <h3 id="user-points">${this.points} points</h3>
         </div>
         `
     }
