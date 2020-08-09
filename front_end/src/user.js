@@ -6,7 +6,6 @@ class User {
     }
 
     newUserGreeting() {
-        // render error message if username is blank
         let userContainer = document.querySelector("#users-container")
         userContainer.innerHTML +=
         `

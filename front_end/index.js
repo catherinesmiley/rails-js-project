@@ -9,7 +9,6 @@ function fetchRandomWord() {
     fetch(`${BASE_URL}/words`)
     .then(resp => resp.json())
     .then(words => {
-        // use map instead? filter?
         const bigWords = []
         for (const word of words) {
             let letters = word.name.split('')
@@ -32,8 +31,6 @@ function clearBody() {
     document.querySelector("#word-display").innerHTML = ""
     document.querySelector("#game-display").innerHTML = ""
     document.querySelector("#user-form-container").innerHTML = ""
-    // document.querySelector("#users-container").innerHTML = ""
-    // need to clear after viewing all users, just not after creating new - add another div?
 }
 
 function createUserForm() {
@@ -77,10 +74,6 @@ function userFormSubmission() {
             alert("Username can't be blank!")
         }
     })
-    // .catch(function(error) {
-    //     alert("Username can't be blank!")
-    //     console.log("error message", error.message)
-    // })
     
     document.getElementById("user-form").reset();
 }
@@ -104,7 +97,6 @@ function fetchUsers() {
 }
 
 function renderWordInput() {
-    // rewrite function name?
     let gameDisplay = document.querySelector("#game-display")
 
     gameDisplay.innerHTML += 
@@ -130,7 +122,6 @@ function startNewGame() {
 }
 
 function createGame() {
-    // have to have a user to start a game - add error message
     let currentUser = document.getElementById("current-user")
     let currentUserId = currentUser.getAttribute('data-id')
     fetch(`${BASE_URL}/games`, {
