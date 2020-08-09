@@ -96,27 +96,97 @@ gesture.valid_words.create([{ name: "egrets" }, { name: "greets" }, { name: "gut
 { name: "true" }, { name: "trug" }, { name: "tugs" }, { name: "ures" }, { name: "urge" }, 
 { name: "user" }, { name: "utes" }])
 
+granola = Word.create(name: "granola")
+granola.valid_words.create([{ name: "agonal" }, { name: "analog" }, { name: "angola" }, 
+{ name: "angora" }, { name: "langar" }, { name: "organa" }, { name: "raglan" }, 
+{ name: "agora" }, { name: "alang" }, { name: "algor" }, { name: "along" }, { name: "anglo" }, 
+{ name: "argal" }, { name: "argan" }, { name: "argol" }, { name: "argon" }, { name: "gnarl" }, 
+{ name: "goral" }, { name: "graal" }, { name: "grana" }, { name: "groan" }, { name: "lagan" }, 
+{ name: "largo" }, { name: "logan" }, { name: "longa" }, { name: "loran" }, { name: "nagor" }, 
+{ name: "orang" }, { name: "organ" }, { name: "ranga" }, { name: "rolag" }, { name: "agar" }, 
+{ name: "agon" }, { name: "alan" }, { name: "alar" }, { name: "alga" }, { name: "anga" }, 
+{ name: "anoa" }, { name: "arna" }, { name: "gala" }, { name: "gaol" }, { name: "gnar" }, 
+{ name: "goal" }, { name: "gora" }, { name: "gran" }, { name: "lana" }, { name: "lang" }, 
+{ name: "larn" }, { name: "loan" }, { name: "long" }, { name: "lorn" }, { name: "naga" }, 
+{ name: "nala" }, { name: "oral" }, { name: "raga" }, { name: "rana" }, { name: "rang" }, 
+{ name: "roan" }, { name: "rong" }])
 
+costume = Word.create(name: "costume")
+costume.valid_words.create([{ name: "comets" }, { name: "comtes" }, { name: "custom" }, 
+{ name: "mucose" }, { name: "comes" }, { name: "comet" }, { name: "comte" }, { name: "comus" }, 
+{ name: "coset" }, { name: "coste" }, { name: "cotes" }, { name: "cutes" }, { name: "escot" }, 
+{ name: "estoc" }, { name: "meous" }, { name: "mesto" }, { name: "moste" }, { name: "motes" }, 
+{ name: "motus" }, { name: "moues" }, { name: "mouse" }, { name: "moust" }, { name: "muset" }, 
+{ name: "mutes" }, { name: "scout" }, { name: "scute" }, { name: "smote" }, { name: "smout" }, 
+{ name: "souce" }, { name: "souct" }, { name: "tomes" }, { name: "touse" }, { name: "come" }, 
+{ name: "coms" }, { name: "cose" }, { name: "cost" }, { name: "cote" }, { name: "cots" }, 
+{ name: "cues" }, { name: "cute" }, { name: "cuts" }, { name: "ecos" }, { name: "ecus" }, 
+{ name: "emos" }, { name: "emus" }, { name: "meou" }, { name: "mets" }, { name: "meus" }, 
+{ name: "mocs" }, { name: "moes" }, { name: "mose" }, { name: "most" }, { name: "mote" }, 
+{ name: "mots" }, { name: "motu" }, { name: "moue" }, { name: "mous" }, { name: "muse" }, 
+{ name: "muso" }, { name: "must" }, { name: "mute" }, { name: "muts" }, { name: "oust" }, 
+{ name: "outs" }, { name: "scot" }, { name: "scum" }, { name: "scut" }, { name: "seco" }, 
+{ name: "sect" }, { name: "smut" }, { name: "some" }, { name: "soum" }, { name: "sout" }, 
+{ name: "stem" }, { name: "stum" }, { name: "suet" }, { name: "sumo" }, { name: "tecs" }, 
+{ name: "tems" }, { name: "tocs" }, { name: "toes" }, { name: "tome" }, { name: "toms" }, 
+{ name: "tose" }, { name: "tums" }, { name: "utes" }])
 
+breathe = Word.create(name: "breathe")
+breathe.valid_words.create([{ name: "aether" }, { name: "bather" }, { name: "beater" }, 
+{ name: "berate" }, { name: "bertha" }, { name: "berthe" }, { name: "breath" }, 
+{ name: "heater" }, { name: "hereat" }, { name: "rebate" }, { name: "reheat" }, 
+{ name: "arete" }, { name: "bathe" }, { name: "beare" }, { name: "beath" }, { name: "beret" }, 
+{ name: "berth" }, { name: "earth" }, { name: "eater" }, { name: "eathe" }, { name: "ether" }, 
+{ name: "hater" }, { name: "heare" }, { name: "heart" }, { name: "rathe" }, { name: "reate" }, 
+{ name: "rehab" }, { name: "taber" }, { name: "thebe" }, { name: "there" }, { name: "thrae" }, 
+{ name: "three" }, { name: "abet" }, { name: "aret" }, { name: "baht" }, { name: "bare" }, 
+{ name: "bate" }, { name: "bath" }, { name: "bear" }, { name: "beat" }, { name: "beer" }, 
+{ name: "beet" }, { name: "bere" }, { name: "beta" }, { name: "bete" }, { name: "beth" }, 
+{ name: "bhat" }, { name: "brae" }, { name: "brat" }, { name: "bree" }, { name: "eath" }, 
+{ name: "ethe" }, { name: "haet" }, { name: "hare" }, { name: "hart" }, { name: "hate" }, 
+{ name: "hear" }, { name: "heat" }, { name: "herb" }, { name: "here" }, { name: "hete" }, 
+{ name: "rate" }, { name: "rath" }, { name: "rete" }, { name: "rhea" }, { name: "tahr" }, 
+{ name: "tare" }, { name: "tear" }, { name: "teer" }, { name: "tehr" }, { name: "thae" }, 
+{ name: "thar" }, { name: "thee" }, { name: "tree" }])
 
+crystal = Word.create(name: "crystal")
+crystal.valid_words.create([{ name: "clarts" }, { name: "clarty" }, { name: "lycras" }, 
+{ name: "stylar" }, { name: "acyls" }, { name: "artsy" }, { name: "aryls" }, { name: "carls" }, 
+{ name: "carts" }, { name: "clart" }, { name: "clary" }, { name: "clast" }, { name: "clats" }, 
+{ name: "clays" }, { name: "crays" }, { name: "lyart" }, { name: "lycra" }, { name: "ryals" }, 
+{ name: "salty" }, { name: "satyr" }, { name: "scaly" }, { name: "scart" }, { name: "scary" }, 
+{ name: "scrat" }, { name: "scray" }, { name: "slart" }, { name: "slaty" }, { name: "stray" }, 
+{ name: "talcs" }, { name: "talcy" }, { name: "trays" }, { name: "acts" }, { name: "acyl" }, 
+{ name: "alts" }, { name: "arcs" }, { name: "arsy" }, { name: "arts" }, { name: "arty" }, 
+{ name: "aryl" }, { name: "carl" }, { name: "cars" }, { name: "cart" }, { name: "cast" }, 
+{ name: "cats" }, { name: "cays" }, { name: "clat" }, { name: "clay" }, { name: "cray" }, 
+{ name: "cyst" }, { name: "lacs" }, { name: "lacy" }, { name: "lars" }, { name: "last" }, 
+{ name: "lats" }, { name: "lays" }, { name: "lyra" }, { name: "racy" }, { name: "rast" }, 
+{ name: "rats" }, { name: "rays" }, { name: "ryal" }, { name: "ryas" }, { name: "salt" }, 
+{ name: "scar" }, { name: "scat" }, { name: "scry" }, { name: "slat" }, { name: "slay" }, 
+{ name: "star" }, { name: "stay" }, { name: "talc" }, { name: "tars" }, { name: "tays" }, 
+{ name: "tray" }, { name: "tsar" }])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+neutral = Word.create(name: "neutral")
+neutral.valid_words.create([{ name: "altern" }, { name: "antler" }, { name: "aunter" }, 
+{ name: "eluant" }, { name: "learnt" }, { name: "lunate" }, { name: "nature" }, 
+{ name: "neural" }, { name: "rental" }, { name: "runlet" }, { name: "ternal" }, 
+{ name: "ulnare" }, { name: "unreal" }, { name: "alert" }, { name: "alter" }, 
+{ name: "alure" }, { name: "antre" }, { name: "arnut" }, { name: "artel" },
+{ name: "laten" }, { name: "later" }, { name: "leant" }, { name: "learn" }, { name: "lunar" }, 
+{ name: "lunet" }, { name: "lutea" }, { name: "luter" }, { name: "neral" }, { name: "ratel" }, 
+{ name: "renal" }, { name: "taler" }, { name: "tuner" }, { name: "ulnae" }, { name: "ulnar" }, 
+{ name: "ultra" }, { name: "unlet" }, { name: "urate" }, { name: "ureal" }, { name: "urena" }, 
+{ name: "urent" }, { name: "urnal" }, { name: "ante" }, { name: "aret" }, { name: "arle" }, 
+{ name: "aune" }, { name: "aunt" }, { name: "earl" }, { name: "earn" }, { name: "elan" }, 
+{ name: "etna" }, { name: "laer" }, { name: "lane" }, { name: "lant" }, { name: "lare" }, 
+{ name: "larn" }, { name: "late" }, { name: "latu" }, { name: "lean" }, { name: "lear" }, 
+{ name: "leat" }, { name: "lent" }, { name: "luna" }, { name: "lune" }, { name: "lunt" }, 
+{ name: "lure" }, { name: "lute" }, { name: "nare" }, { name: "neal" }, { name: "near" }, 
+{ name: "neat" }, { name: "nurl" }, { name: "rale" }, { name: "rant" }, { name: "rate" }, 
+{ name: "ratu" }, { name: "raun" }, { name: "real" }, { name: "rean" }, { name: "rent" }, 
+{ name: "rule" }, { name: "rune" }, { name: "runt" }, { name: "tael" }, { name: "tale" }, 
+{ name: "tane" }, { name: "tare" }, { name: "tarn" }, { name: "teal" }, { name: "tear" }, 
+{ name: "tela" }, { name: "tern" }, { name: "true" }, { name: "tuan" }, { name: "tule" }, 
+{ name: "tuna" }, { name: "tune" }, { name: "turn" }, { name: "ulan" }, { name: "ulna" }, 
+{ name: "urea" }])
