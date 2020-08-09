@@ -200,6 +200,7 @@ function fetchValidWords() {
                 bigWordValidWords.push(validWord)
             }
         }
+        console.log("valid words in fetch", bigWordValidWords)
     })
 
     return bigWordValidWords
@@ -209,9 +210,7 @@ function persistGameData() {
     let currentUser = document.getElementById("current-user")
     let currentUserId = currentUser.getAttribute('data-id')
     let username = document.querySelector("#user-id").innerHTML
-    console.log("username", username)
     let points = document.querySelector("#user-points").innerHTML
-    console.log("points", points)
 
     let user = {
         username: username,

@@ -18,7 +18,6 @@ class Word {
 
         wordDisplay.innerHTML += wordsHTML
         validWords = fetchValidWords()
-        console.log(validWords)
     }
 
     renderNewWord() {
