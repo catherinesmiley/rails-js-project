@@ -229,6 +229,11 @@ function persistGameData() {
     .then(user => user)  
 }
 
+function renderInstructions() {
+    console.log("hi")
+}
+
+document.querySelector("#instructions").addEventListener("click", renderInstructions)
 document.querySelector("#new-game").addEventListener("click", startNewGame)
 document.querySelector("#user-bttn").addEventListener("click", createUserForm)
 document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)
