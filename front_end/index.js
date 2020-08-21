@@ -1,9 +1,10 @@
 const BASE_URL = "http://localhost:3090"
 
-document.addEventListener("DOMContentLoaded", () => {
-})
+// document.addEventListener("DOMContentLoaded", () => {
+// })
 
 function fetchRandomWord() {
+ 
     let wordDisplay = document.querySelector("#word-display")
 
     fetch(`${BASE_URL}/words`)
@@ -216,8 +217,10 @@ function persistGameData() {
         },
         body: JSON.stringify(user)
     })
-    .then(resp => resp.json())
-    .then(user => user)  
+    // .then(resp => resp.json())
+    // .then(user => user)
+    //update the DOM here
+    // can split the renderNewWord function and call the new function here 
 }
 
 function renderInstructions() {

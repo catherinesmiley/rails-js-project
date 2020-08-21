@@ -64,6 +64,7 @@ class Word {
         } else {
             alert("That is not a valid word!")
         }
+ 
         persistGameData()
     }
 

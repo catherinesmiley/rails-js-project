@@ -6,6 +6,7 @@ class User {
     }
 
     newUserGreeting() {
+        // change function name 
         let userContainer = document.querySelector("#users-container")
         userContainer.innerHTML +=
         `

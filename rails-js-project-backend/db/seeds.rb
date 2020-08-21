@@ -190,3 +190,34 @@ neutral.valid_words.create([{ name: "altern" }, { name: "antler" }, { name: "aun
 { name: "tela" }, { name: "tern" }, { name: "true" }, { name: "tuan" }, { name: "tule" }, 
 { name: "tuna" }, { name: "tune" }, { name: "turn" }, { name: "ulan" }, { name: "ulna" }, 
 { name: "urea" }])
+
+flatter = Word.create(name: "flatter")
+flatter.valid_words.create([{ name: "falter" }, { name: "fatter" }, { name: "latter" }, 
+{ name: "rattle" }, { name: "tatler" }, { name: "after" }, { name: "aleft" }, 
+{ name: "alert" }, { name: "alter" }, { name: "arett" }, { name: "artel" }, 
+{ name: "farle" }, { name: "feart" }, { name: "feral" }, { name: "fetal" }, 
+{ name: "fetta" }, { name: "flare" }, { name: "frate" }, { name: "later" }, 
+{ name: "latte" }, { name: "ratel" }, { name: "taler" }, { name: "tater" }, 
+{ name: "tetra" }, { name: "treat" }, { name: "trefa" }, { name: "alef" }, { name: "aret" }, 
+{ name: "arle" }, { name: "earl" }, { name: "etat" }, { name: "fare" }, { name: "farl" }, 
+{ name: "fart" }, { name: "fate" }, { name: "feal" }, { name: "fear" }, { name: "feat" }, 
+{ name: "felt" }, { name: "feta" }, { name: "fett" }, { name: "flat" }, { name: "flea" }, 
+{ name: "frae" }, { name: "frat" }, { name: "fret" }, { name: "laer" }, { name: "lare" }, 
+{ name: "late" }, { name: "leaf" }, { name: "lear" }, { name: "leat" }, { name: "left" }, 
+{ name: "raft" }, { name: "rale" }, { name: "rate" }, { name: "real" }, { name: "reft" }, 
+{ name: "tael" }, { name: "tale" }, { name: "tare" }, { name: "tart" }, { name: "tate" }, 
+{ name: "teal" }, { name: "tear" }, { name: "teat" }, { name: "tela" }, { name: "telt" }, 
+{ name: "terf" }, { name: "trat" }, { name: "tref" }, { name: "tret" }])
+
+pyramid = Word.create(name: "pyramid")
+pyramid.valid_words.create([{ name: "myriad" }, { name: "dairy" }, { name: "dampy" }, 
+{ name: "diary" }, { name: "diram" }, { name: "mardy" }, { name: "marid" }, { name: "padri" }, 
+{ name: "pardi" }, { name: "pardy" }, { name: "prima" }, { name: "primy" }, { name: "rapid" }, 
+{ name: "yaird" }, { name: "adry" }, { name: "airy" }, { name: "amid" }, { name: "amir" }, 
+{ name: "arid" }, { name: "army" }, { name: "damp" }, { name: "dari" }, { name: "dimp" }, 
+{ name: "diya" }, { name: "dram" }, { name: "drap" }, { name: "dray" }, { name: "drip" }, 
+{ name: "maid" }, { name: "mair" }, { name: "mard" }, { name: "mary" }, { name: "miry" }, 
+{ name: "padi" }, { name: "paid" }, { name: "pair" }, { name: "pard" }, { name: "pima" }, 
+{ name: "prad" }, { name: "pram" }, { name: "pray" }, { name: "prim" }, { name: "raid" }, 
+{ name: "rami" }, { name: "ramp" }, { name: "riad" }, { name: "rima" }, { name: "rimy" }, 
+{ name: "yard" }, { name: "yird" }])
