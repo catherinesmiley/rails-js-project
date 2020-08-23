@@ -217,10 +217,6 @@ function persistGameData() {
         },
         body: JSON.stringify(user)
     })
-    // .then(resp => resp.json())
-    // .then(user => user)
-    //update the DOM here
-    // can split the renderNewWord function and call the new function here 
 }
 
 function renderInstructions() {
