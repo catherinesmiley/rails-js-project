@@ -1,7 +1,11 @@
 const BASE_URL = "http://localhost:3090"
 
-// document.addEventListener("DOMContentLoaded", () => {
-// })
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("#instructions").addEventListener("click", renderInstructions)
+    document.querySelector("#new-game").addEventListener("click", startNewGame)
+    document.querySelector("#user-bttn").addEventListener("click", createUserForm)
+    document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)
+})
 
 function fetchRandomWord() {
  
@@ -222,8 +226,3 @@ function persistGameData() {
 function renderInstructions() {
     alert("Welcome to WordFinder!\n\nClick New User, enter a username, then click Create User. Click Start New Game to start a new game.\n\nA word will appear on the page and you enter words, one at a time, that can be formed from that word. You will get points for each valid word that you enter. A word is valid if it is at least 4 letters, is only formed from letters found in the published word, and each letter in the published word is used only once.\n\nScoring:\n4 letter words = 1 point each\n5 letter words = 2 points each\n6 letter words = 3 points each\n\nGuess as many words as you can, then start a new game to get more points.\n\nGood luck!")
 }
-
-document.querySelector("#instructions").addEventListener("click", renderInstructions)
-document.querySelector("#new-game").addEventListener("click", startNewGame)
-document.querySelector("#user-bttn").addEventListener("click", createUserForm)
-document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)
