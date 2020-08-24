@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#new-game").addEventListener("click", startNewGame)
     document.querySelector("#user-bttn").addEventListener("click", createUserForm)
     document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)
+    document.querySelector("#sort-users-bttn").addEventListener("click", sortUsers)
 })
 
 function createUserForm() {
@@ -47,6 +48,7 @@ function userFormSubmission() {
         } else {
             alert("Username can't be blank!")
         }
+        // before even making the fetch request check to make sure username isn't blank
     })
     
     document.getElementById("user-form").reset();
@@ -70,9 +72,29 @@ function fetchUsers() {
     })
 }
 
+function sortUsers() {
+    let allUsers = User.allUsers
+    allUsers.sort(function (a, b) {
+        return a.points - b.points;
+    })
+    let usersContainer = document.querySelector("#users-container")
+    usersContainer.innerHTML = ""
+    for (const user of allUsers) {
+        usersContainer.innerHTML +=
+        `
+        <ul>
+        <li> Username: ${user.username} - Points: ${user.points} </li>
+        </ul>
+        `
+    }
+}
+
 function startNewGame() {
     clearBody()
     createGame()
+    // static function in game.js
+    // everything else has a home in the other js classes as static
+    // error if trying to start a new game without a user
 }
 
 function createGame() {

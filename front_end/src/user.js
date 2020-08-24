@@ -3,6 +3,7 @@ class User {
         this.id = id;
         this.username = username;
         this.points = points;
+        User.allUsers.push(this)
     }
 
     displayUser() {
@@ -15,5 +16,8 @@ class User {
         </div>
         `
     }
+
+    static allUsers = []
+    // can use static methods to reduce number of fetch requests
 
 }
