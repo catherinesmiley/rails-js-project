@@ -5,8 +5,7 @@ class User {
         this.points = points;
     }
 
-    newUserGreeting() {
-        // change function name 
+    displayUser() {
         let userContainer = document.querySelector("#users-container")
         userContainer.innerHTML +=
         `

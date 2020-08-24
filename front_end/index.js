@@ -7,37 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#all-users-bttn").addEventListener("click", fetchUsers)
 })
 
-function fetchRandomWord() {
- 
-    let wordDisplay = document.querySelector("#word-display")
-
-    fetch(`${BASE_URL}/words`)
-    .then(resp => resp.json())
-    .then(words => {
-        const bigWords = []
-        for (const word of words) {
-            let letters = word.name.split('')
-            let letterCount = letters.length
-            if (letterCount > 6) {
-                bigWords.push(word) 
-            }
-        }
-
-            let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
-            let currentGame = document.getElementById("current-game")
-            let currentGameId = currentGame.getAttribute('data-id')
-            let w = new Word(randomWord.id, randomWord.name, currentGameId)
-            w.renderRandomWord()
-        })
-
-    }
-
-function clearBody() {
-    document.querySelector("#word-display").innerHTML = ""
-    document.querySelector("#game-display").innerHTML = ""
-    document.querySelector("#user-form-container").innerHTML = ""
-}
-
 function createUserForm() {
     clearBody()
     let userForm = document.getElementById("user-form-container")
@@ -74,7 +43,7 @@ function userFormSubmission() {
     .then(user => {
         if (user.username != "can't be blank") {
             let u = new User(user.id, user.username, user.points)
-            u.newUserGreeting()
+            u.displayUser()
         } else {
             alert("Username can't be blank!")
         }
@@ -100,6 +69,39 @@ function fetchUsers() {
         }
     })
 }
+
+function fetchRandomWord() {
+ 
+    let wordDisplay = document.querySelector("#word-display")
+
+    fetch(`${BASE_URL}/words`)
+    .then(resp => resp.json())
+    .then(words => {
+        const bigWords = []
+        for (const word of words) {
+            let letters = word.name.split('')
+            let letterCount = letters.length
+            if (letterCount > 6) {
+                bigWords.push(word) 
+            }
+        }
+
+            let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
+            let currentGame = document.getElementById("current-game")
+            let currentGameId = currentGame.getAttribute('data-id')
+            let w = new Word(randomWord.id, randomWord.name, currentGameId)
+            w.renderRandomWord()
+        })
+
+    }
+
+function clearBody() {
+    document.querySelector("#word-display").innerHTML = ""
+    document.querySelector("#game-display").innerHTML = ""
+    document.querySelector("#user-form-container").innerHTML = ""
+}
+
+
 
 function renderWordInput() {
     let gameDisplay = document.querySelector("#game-display")
