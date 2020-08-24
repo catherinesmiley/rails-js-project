@@ -45,9 +45,7 @@ class Word {
         let newGamePoints = (parseInt(gamePoints) + wordValue)
         let newUserPoints = (parseInt(userPoints) + wordValue)
 
-        let words = validWords.map(function(element){
-            return element.name
-        })
+        let words = validWords.map(e => e.name)
         
         if (words.includes(this.name)) {
             wordsDisplay.innerHTML += 
