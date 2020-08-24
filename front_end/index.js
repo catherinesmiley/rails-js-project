@@ -70,59 +70,6 @@ function fetchUsers() {
     })
 }
 
-function fetchRandomWord() {
- 
-    let wordDisplay = document.querySelector("#word-display")
-
-    fetch(`${BASE_URL}/words`)
-    .then(resp => resp.json())
-    .then(words => {
-        const bigWords = []
-        for (const word of words) {
-            let letters = word.name.split('')
-            let letterCount = letters.length
-            if (letterCount > 6) {
-                bigWords.push(word) 
-            }
-        }
-
-            let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
-            let currentGame = document.getElementById("current-game")
-            let currentGameId = currentGame.getAttribute('data-id')
-            let w = new Word(randomWord.id, randomWord.name, currentGameId)
-            w.renderRandomWord()
-        })
-
-    }
-
-function clearBody() {
-    document.querySelector("#word-display").innerHTML = ""
-    document.querySelector("#game-display").innerHTML = ""
-    document.querySelector("#user-form-container").innerHTML = ""
-}
-
-
-
-function renderWordInput() {
-    let gameDisplay = document.querySelector("#game-display")
-
-    gameDisplay.innerHTML += 
-    `   <div id="word-form-container">
-        <form id="word-form">
-            Type your words here: <input type="text" id="word-name" onfocus="this.value=''">
-            <input type="submit" value="Submit Word">
-        </form>
-        </div>
-        <div id="user-words-display">
-
-        </div>
-    `
-
-    let wordForm = document.querySelector("#word-form-container")
-    wordForm.addEventListener("submit", wordFormSubmission)
-
-}
-    
 function startNewGame() {
     clearBody()
     createGame()
@@ -149,6 +96,57 @@ function createGame() {
         fetchRandomWord()
         renderWordInput()
     })
+
+}
+
+function fetchRandomWord() {
+ 
+    let wordDisplay = document.querySelector("#word-display")
+
+    fetch(`${BASE_URL}/words`)
+    .then(resp => resp.json())
+    .then(words => {
+        const bigWords = []
+        for (const word of words) {
+            let letters = word.name.split('')
+            let letterCount = letters.length
+            if (letterCount > 6) {
+                bigWords.push(word) 
+            }
+        }
+
+        let randomWord = bigWords[Math.floor(Math.random() * bigWords.length)]
+        let currentGame = document.getElementById("current-game")
+        let currentGameId = currentGame.getAttribute('data-id')
+        let w = new Word(randomWord.id, randomWord.name, currentGameId)
+        w.renderRandomWord()
+    })
+
+}
+
+function clearBody() {
+    document.querySelector("#word-display").innerHTML = ""
+    document.querySelector("#game-display").innerHTML = ""
+    document.querySelector("#user-form-container").innerHTML = ""
+}
+
+function renderWordInput() {
+    let gameDisplay = document.querySelector("#game-display")
+
+    gameDisplay.innerHTML += 
+    `   <div id="word-form-container">
+        <form id="word-form">
+            Type your words here: <input type="text" id="word-name" onfocus="this.value=''">
+            <input type="submit" value="Submit Word">
+        </form>
+        </div>
+        <div id="user-words-display">
+
+        </div>
+    `
+
+    let wordForm = document.querySelector("#word-form-container")
+    wordForm.addEventListener("submit", wordFormSubmission)
 
 }
 
